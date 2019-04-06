@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Jumbotron from "./components/Jumbotron"
 import Cards from "./components/Cards";
 import Wrapper from "./components/Wrapper";
@@ -15,10 +14,8 @@ class App extends Component {
     shakeit: "false"
   };
   clickPicture = id => {
-    // Arrange the pictures in a random manner
     const shuffledArray = this.shuffleArray(cards);
     this.setState({cards: shuffledArray});
-    // if clicked an image already clicked set this.state.score = 0; empty clickeadArray, end of if block
     if (this.state.clickedArray.includes(id)) {
       this.setState({ score: 0, clickedArray: [], message: "WRONG. From the TOP", shakeit: "true"});
     }
@@ -49,10 +46,11 @@ class App extends Component {
         <div className="center-align">
         <h3 className="App-intro">
           
-          <p className = "score"><strong>Score: {this.state.score} | TopScore: {this.state.topScore}</strong></p>
+          <p className = "score"><strong>Score: {this.state.score} / HighScore: {this.state.topScore}</strong></p>
           <p className="message"><strong>{this.state.message}</strong></p>
         </h3>
         </div>
+        <div className="container">
         <Wrapper
         shakeWrapper = {this.state.shakeit}
         pictures=
@@ -66,6 +64,7 @@ class App extends Component {
             />
           ))}
         />
+        </div>
         <footer className="footer">
       <div className="container">
         <span className="text-muted">&copy; Clicky Game - React app.</span>

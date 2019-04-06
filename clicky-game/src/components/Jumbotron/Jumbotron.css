@@ -1,0 +1,11 @@
+.jumbotron {
+    background-image: url("https://www.mmogames.com/wp-content/uploads/2015/05/video-games-banner.png");
+    text-align: center;
+    color: rgba(255, 255, 255, 0.856);
+    width: 100%;
+    background-repeat: no-repeat;
+    height: 400px;
+    font-family: 'Arial', cursive;
+    padding-top: 100px;
+    margin-top: 20px;
+}
